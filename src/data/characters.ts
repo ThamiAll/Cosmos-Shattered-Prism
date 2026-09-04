@@ -3,13 +3,12 @@ export interface Ability {
   description: string
 }
 
-export interface HeroTheme {
+export interface CharacterTheme {
   primary: string
   glow: string
   border: string
   badgeBg: string
   badgeText: string
-  subText?: string   // <--- O ponto de interrogação faz o erro sumir na hora!
 }
 
 export interface Character {
@@ -22,7 +21,7 @@ export interface Character {
   videoFallbackSrc: string
   lore: string
   abilities: Ability[]
-  theme: HeroTheme
+  theme: CharacterTheme
 }
 
 export const heroes: Character[] = [
@@ -30,259 +29,134 @@ export const heroes: Character[] = [
     id: 'cosmo',
     name: 'Cosmo',
     title: 'O Tecelão Estelar',
-    element: 'luz-estelar',
-    imageSrc: '/images/heroes/cosmo.png',
+    element: 'Luz Estelar',
+    imageSrc: '/images/heroes/cosmo.jpg',
     videoSrc: '/videos/heroes/cosmo-loop.mp4',
-    videoFallbackSrc: '/videos/heroes/cosmo-loop.mp4',
-    lore: 'O guardião central do Grande Prisma. Ele empunha a lâmina de pura ressonância estelar e canaliza a energia das constelações para purificar a corrupção do vazio.',
-    theme: {
-      primary: '#62e8ff',
-      glow: 'rgba(98, 232, 255, 0.35)',
-      border: 'border-cosmic-cyan/40',
-      badgeBg: 'bg-cosmic-cyan/10',
-      badgeText: 'text-cosmic-cyan',
-      subText: 'text-cosmic-cyan',
-    },
+    videoFallbackSrc: '/videos/heroes/cosmo-loop.webm',
+    lore: 'O guardião central do Grande Prisma. Ele empunha a lâmina de pura ressonância estelar para purificar a corrupção do vazio.',
     abilities: [
-      {
-        name: 'Corte Cósmico',
-        description: 'Desfere um golpe de lâmina estelar cortando o espaço e projetando lâminas de luz prismática.',
-      },
-      {
-        name: 'Ressonância do Prisma',
-        description: 'Canaliza o núcleo de luz, criando um campo de estilhaços que repele e desintegra ataques inimigos.',
-      },
-      {
-        name: 'Supernova Primordial',
-        description: 'Eleva a espada canalizando o poder de um pulsar cósmico para explodir em dano massivo em área.',
-      },
+      { name: 'Corte Cósmico', description: 'Desfere um golpe de lâmina estelar cortando o espaço e projetando lâminas de luz prismática.' },
+      { name: 'Ressonância do Prisma', description: 'Canaliza o núcleo de luz, criando um campo de estilhaços que repele e desintegra ataques inimigos.' },
+      { name: 'Supernova Primordial', description: 'Eleva a espada canalizando o poder de um pulsar cósmico para explodir em dano massivo em área.' }
     ],
+    theme: {
+      primary: '#38bdf8',
+      glow: 'rgba(56, 189, 248, 0.45)',
+      border: 'border-sky-400/40',
+      badgeBg: 'bg-sky-400/10',
+      badgeText: 'text-sky-300'
+    }
   },
   {
     id: 'vespera',
     name: 'Vespera',
-    title: 'A Lâmina do Crepúsculo',
-    element: 'sombra-magenta',
-    imageSrc: '/images/heroes/vespera.png',
+    title: 'A Lâmina do Vazio',
+    element: 'Fenda Astral',
+    imageSrc: '/images/heroes/vespera.jpg',
     videoSrc: '/videos/heroes/vespera-loop.mp4',
-    videoFallbackSrc: '/videos/heroes/vespera-loop.mp4',
-    lore: 'Nascida nas dobras entre as dimensões, canaliza a essência sombria das nebulosas para desferir golpes rápidos e letais antes que os inimigos percebam.',
-    theme: {
-      primary: '#c084fc',
-      glow: 'rgba(192, 132, 252, 0.35)',
-      border: 'border-purple-500/40',
-      badgeBg: 'bg-purple-500/10',
-      badgeText: 'text-purple-300',
-      subText: 'text-purple-400',
-    },
+    videoFallbackSrc: '/videos/heroes/vespera-loop.webm',
+    lore: 'Nascida nas fronteiras do esquecimento, Vespera manipula as dobras dimensionais para desferir ataques fulminantes com suas adagas gêmeas.',
     abilities: [
-      {
-        name: 'Passo Umbral',
-        description: 'Teleporta-se instantaneamente pelas sombras, deixando um rastro de poeira estelar cintilante.',
-      },
-      {
-        name: 'Gume Prismático Sombrio',
-        description: 'Executa uma sequência veloz de cortes duplos com adagas de plasma carmesim e roxo.',
-      },
-      {
-        name: 'Eclipse Total',
-        description: 'Mergulha a arena em trevas absolutas, confundindo adversários e aumentando drasticamente sua agilidade.',
-      },
+      { name: 'Disfarce Entrópico', description: 'Funde sua forma à escuridão, tornando-se inalvejável por breves instantes.' },
+      { name: 'Lâminas Gêmeas de Fenda', description: 'Corta o tecido do espaço com descargas elétricas de pura energia dimensional.' },
+      { name: 'Vórtice Crepuscular', description: 'Abre um rasgo de vácuo gravitacional que arrasta inimigos próximos para o impacto.' }
     ],
+    theme: {
+      primary: '#d946ef',
+      glow: 'rgba(217, 70, 239, 0.45)',
+      border: 'border-fuchsia-500/40',
+      badgeBg: 'bg-fuchsia-500/10',
+      badgeText: 'text-fuchsia-300'
+    }
   },
   {
     id: 'solaris',
     name: 'Solaris',
-    title: 'O Portador da Aurora',
-    element: 'fogo-solar',
-    imageSrc: '/images/heroes/solaris.png',
+    title: 'A Forja Primordial',
+    element: 'Fogo Solar',
+    imageSrc: '/images/heroes/solaris.jpg',
     videoSrc: '/videos/heroes/solaris-loop.mp4',
-    videoFallbackSrc: '/videos/heroes/solaris-loop.mp4',
-    lore: 'Um colosso ancestral forjado no coração das estrelas primordiais. Carrega a fúria e o calor incandescente das supernovas para incinerar qualquer vestígio de corrupção do vazio.',
+    videoFallbackSrc: '/videos/heroes/solaris-loop.webm',
+    lore: 'Colosso taurino esculpido pelo calor de núcleos solares extintos. Canaliza o plasma cósmico através de chifres e punhos incandescentes.',
+    abilities: [
+      { name: 'Carga Magmática', description: 'Investe em linha reta deixando um rastro de calor estelar que incinera tudo pelo caminho.' },
+      { name: 'Esferas da Forja', description: 'Conjura núcleos solares comprimidos que detonam em ondas de choque térmico.' },
+      { name: 'Coroa Solar', description: 'Incendeia a armadura com um halo solar de altíssima temperatura, queimando inimigos ao redor.' }
+    ],
     theme: {
-      primary: '#fbbf24',
-      glow: 'rgba(251, 191, 36, 0.4)',
+      primary: '#f59e0b',
+      glow: 'rgba(245, 158, 11, 0.45)',
       border: 'border-amber-500/40',
       badgeBg: 'bg-amber-500/10',
-      badgeText: 'text-amber-400',
-      subText: 'text-amber-400',
-    },
-    abilities: [
-      {
-        name: 'Chama Radiante',
-        description: 'Funde esferas de plasma cósmico e dispara uma rajada devastadora de luz solar pura.',
-      },
-      {
-        name: 'Escudo de Fótons',
-        description: 'Ergue uma barreira térmica giratória que absorve projéteis e converte em poder arcano.',
-      },
-      {
-        name: 'Julgamento Solar',
-        description: 'Invoca uma coluna de fogo celestial que purifica o campo de batalha por completo.',
-      },
-    ],
+      badgeText: 'text-amber-300'
+    }
   },
   {
     id: 'lyra',
     name: 'Lyra',
-    title: 'A Tecelã Harmônica',
-    element: 'eco-sonoro',
-    imageSrc: '/images/heroes/lyra.png',
+    title: 'A Melodia Astral',
+    element: 'Harmonia Cristalina',
+    imageSrc: '/images/heroes/lyra.jpg',
     videoSrc: '/videos/heroes/lyra-loop.mp4',
-    videoFallbackSrc: '/videos/heroes/lyra-loop.mp4',
-    lore: 'Mestra das frequências que sustentam o cosmos. Sua música sintoniza os fragmentos e cura os tecidos da realidade.',
-    theme: {
-      primary: '#38bdf8',
-      glow: 'rgba(56, 189, 248, 0.35)',
-      border: 'border-sky-500/40',
-      badgeBg: 'bg-sky-500/10',
-      badgeText: 'text-sky-300',
-      subText: 'text-sky-400',
-    },
+    videoFallbackSrc: '/videos/heroes/lyra-loop.webm',
+    lore: 'Flutuando entre constelações, Lyra tece frequências de som e luz sólida para curar aliados e estilhaçar barreiras inimigas.',
     abilities: [
-      {
-        name: 'Sinfonia Astral',
-        description: 'Gera pulsos sonoros que atordoam inimigos e aumentam o ritmo de conjuração dos aliados.',
-      },
-      {
-        name: 'Barreira Harmônica',
-        description: 'Cria uma redoma de ondas sonoras que desacelera projéteis hostis.',
-      },
-      {
-        name: 'Ressonância Absoluta',
-        description: 'Libera uma frequência suprema capaz de restaurar a vida dos aliados e desmantelar feitiços sombrios.',
-      },
+      { name: 'Acorde Celestial', description: 'Dispara ondas sonoras translúcidas de cristal que desorientam os oponentes.' },
+      { name: 'Cúpula Harmônica', description: 'Projeta um escudo sonoro que ressoa absorvendo danos mágicos e regenerando vitalidade.' },
+      { name: 'Sinfonia do Cosmos', description: 'Invoca uma tempestade de prismas estelares que explodem em sequências harmônicas.' }
     ],
+    theme: {
+      primary: '#a5f3fc',
+      glow: 'rgba(165, 243, 252, 0.45)',
+      border: 'border-cyan-200/40',
+      badgeBg: 'bg-cyan-200/10',
+      badgeText: 'text-cyan-200'
+    }
   },
   {
-    id: 'nyra',
-    name: 'Nyra',
+    id: 'thalassa',
+    name: 'Thalassa',
     title: 'A Sentinela das Marés',
-    element: 'éter-aquático',
-    imageSrc: '/images/heroes/nyra.png',
-    videoSrc: '/videos/heroes/nyra-loop.mp4',
-    videoFallbackSrc: '/videos/heroes/nyra-loop.mp4',
-    lore: 'Controla os rios de éter cósmico que fluem pelo espaço profundo, adaptando suas correntes para defesa e ataque implacável.',
+    element: 'Prisma Oceânico',
+    imageSrc: '/images/heroes/thalassa.jpg',
+    videoSrc: '/videos/heroes/thalassa-loop.mp4',
+    videoFallbackSrc: '/videos/heroes/thalassa-loop.webm',
+    lore: 'Protetora das profundezas prismáticas. Seu tridente cristalino controla marés de energia densa e esferas d’água condensada.',
+    abilities: [
+      { name: 'Perfuração Abissal', description: 'Estoca o tridente invocando correntes oceânicas cristalizadas de longo alcance.' },
+      { name: 'Esferas Hidrostáticas', description: 'Prende projéteis e oponentes em bolhas de água cósmica hiper-pressurizada.' },
+      { name: 'Maelstrom de Prisma', description: 'Ergue uma coluna colossal de torrente marinha infundida com lascas de cristal cortante.' }
+    ],
     theme: {
-      primary: '#2dd4bf',
-      glow: 'rgba(45, 212, 191, 0.35)',
+      primary: '#14b8a6',
+      glow: 'rgba(20, 184, 166, 0.45)',
       border: 'border-teal-500/40',
       badgeBg: 'bg-teal-500/10',
-      badgeText: 'text-teal-300',
-      subText: 'text-teal-400',
-    },
-    abilities: [
-      {
-        name: 'Corrente Prismática',
-        description: 'Dispara jatos de fluido celestial que aprisionam os adversários em vórtices de pura pressão.',
-      },
-      {
-        name: 'Bruma Etérea',
-        description: 'Cobre o terreno com uma névoa cósmica que confere invisibilidade parcial e regeneração.',
-      },
-      {
-        name: 'Maelstrom Dimensional',
-        description: 'Abre um redemoinho aquático-espacial que suga e colapsa a defesa dos inimigos na área.',
-      },
-    ],
+      badgeText: 'text-teal-300'
+    }
   },
   {
-    id: 'kaelen',
-    name: 'Kaelen',
-    title: 'O Guardião das Rochas Vivas',
-    element: 'terra-cristalina',
-    imageSrc: '/images/heroes/kaelen.png',
-    videoSrc: '/videos/heroes/kaelen-loop.mp4',
-    videoFallbackSrc: '/videos/heroes/kaelen-loop.mp4',
-    lore: 'Forjado a partir do núcleo de asteroides ancestrais, ele é a fortaleza inabalável que protege o restante dos guardiões.',
-    theme: {
-      primary: '#34d399',
-      glow: 'rgba(52, 211, 153, 0.35)',
-      border: 'border-emerald-500/40',
-      badgeBg: 'bg-emerald-500/10',
-      badgeText: 'text-emerald-300',
-      subText: 'text-emerald-400',
-    },
+    id: 'terran',
+    name: 'Terran',
+    title: 'O Baluarte Telúrico',
+    element: 'Cristal Esmeralda',
+    imageSrc: '/images/heroes/terran.jpg',
+    videoSrc: '/videos/heroes/terran-loop.mp4',
+    videoFallbackSrc: '/videos/heroes/terran-loop.webm',
+    lore: 'Maciço titã pétreo imbuído de radiação esmeralda ancestral. Suas carapaças de geodo suportam impactos devastadores sem ceder.',
     abilities: [
-      {
-        name: 'Impacto Sísmico',
-        description: 'Golpeia o chão erguendo monólitos de cristal pontiagudos que empalam os inimigos.',
-      },
-      {
-        name: 'Carapaça de Meteorito',
-        description: 'Endurece seu corpo com crostas minerais densas, tornando-se imune a efeitos de controle.',
-      },
-      {
-        name: 'Colapso Gravitacional',
-        description: 'Manipula a massa ao redor gerando uma atração gravitacional esmagadora contra o solo.',
-      },
+      { name: 'Impacto Tectônico', description: 'Bate os punhos de rocha no solo liberando ondas de choque que cravam espinhos de cristal.' },
+      { name: 'Muralha Geomórfica', description: 'Endurece as placas de pedra de sua armadura aumentando drasticamente sua tenacidade.' },
+      { name: 'Ressonância Sísmica', description: 'Desperta a energia nuclear esmeralda de seu peito, emitindo pulsos devastadores em área.' }
     ],
-  },
+    theme: {
+      primary: '#22c55e',
+      glow: 'rgba(34, 197, 94, 0.45)',
+      border: 'border-green-500/40',
+      badgeBg: 'bg-green-500/10',
+      badgeText: 'text-green-300'
+    }
+  }
 ]
 
-export const villains: Character[] = [
-  {
-    id: 'null',
-    name: 'Null',
-    title: 'O Devorador de Fragmentos',
-    element: 'vazio-abissal',
-    imageSrc: '/images/villains/null.png',
-    videoSrc: '/videos/villains/null-loop.mp4',
-    videoFallbackSrc: '/videos/villains/null-loop.mp4',
-    lore: 'Uma entidade nascida do abismo infinito entre as dimensões. Seu único propósito é consumir toda a luminescência estelar e transformar a floresta cósmica em matéria inerte e escuridão.',
-    theme: {
-      primary: '#e11d48',
-      glow: 'rgba(225, 29, 72, 0.4)',
-      border: 'border-rose-600/40',
-      badgeBg: 'bg-rose-950/30',
-      badgeText: 'text-rose-400',
-      subText: 'text-rose-500',
-    },
-    abilities: [
-      {
-        name: 'Singularidade Negra',
-        description: 'Cria um buraco negro em miniatura que atrai e comprime tudo ao redor.',
-      },
-      {
-        name: 'Tentáculos do Vazio',
-        description: 'Projéteis de sombra que drenam a energia prismática dos guardiões ao contato.',
-      },
-      {
-        name: 'Aniquilação Entrópica',
-        description: 'Libera uma onda de vácuo puro que desativa as habilidades ativas dos alvos.',
-      },
-    ],
-  },
-  {
-    id: 'kryss',
-    name: 'Kryss',
-    title: 'A Rainha da Corrupção',
-    element: 'plasma-carmesim',
-    imageSrc: '/images/villains/kryss.png',
-    videoSrc: '/videos/villains/kryss-loop.mp4',
-    videoFallbackSrc: '/videos/villains/kryss-loop.mp4',
-    lore: 'Outrora uma das mais nobres guardiãs estelares, foi consumida pela ganância dos cristais escuros e agora comanda as legiões de parasitas carmesins do abismo.',
-    theme: {
-      primary: '#f43f5e',
-      glow: 'rgba(244, 63, 94, 0.4)',
-      border: 'border-rose-500/40',
-      badgeBg: 'bg-rose-900/20',
-      badgeText: 'text-rose-400',
-      subText: 'text-rose-400',
-    },
-    abilities: [
-      {
-        name: 'Espinhos Rubros',
-        description: 'Faz brotar estacas de cristal corrompido que infectam a vida ao redor com veneno cósmico.',
-      },
-      {
-        name: 'Enxame Parasitário',
-        description: 'Invoca pequenas criaturas vorazes do vazio que desestabilizam o terreno.',
-      },
-      {
-        name: 'Transfiguração Maldita',
-        description: 'Corrompe os estilhaços de luz próximos, virando o poder dos próprios heróis contra eles.',
-      },
-    ],
-  },
-]
+export const villains: Character[] = []
